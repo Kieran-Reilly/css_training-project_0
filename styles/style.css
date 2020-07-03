@@ -1,0 +1,36 @@
+:root {
+    --size: 12rem;
+}
+
+div {
+    user-select: none;
+}
+
+.simple {
+    background: cornflowerblue;
+    color: white;
+    width: var(--size);
+    height: var(--size);
+    border-radius: 10px;
+    font-size: 2rem;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: calc(50% - var(--size)/2);
+    left: calc(50% - var(--size)/2);
+    transition: border-radius 0.5s, background-color 0.5s, font-size 0.5s, box-shadow 0.5s ease-in-out;
+}
+
+.simple:hover {
+    background: #e91e63;
+    border-radius: 50%;
+}
+
+.simple:active {
+    font-size: 1.5rem;
+    background: green;
+    box-shadow: inset  0 0 10px 5px rgba(1, 1, 1, 0.61);
+}
