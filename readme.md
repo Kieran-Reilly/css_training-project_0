@@ -1,42 +1,42 @@
-# CRS Starter
-
 ## Introduction
+This is a simple css only exercise where we style a single div.
 
-This is a small template project to help with library development.
-It includes all the required building blocks already set up ready to use.
-There are a couple of conventions to consider.
+```html
+<div class="simple">Hello World</div>
+```
 
-1. Source code is in the "src folder"
-1. Tests have the same name as the src file but also includes ".test" at the end of the name. For example "my-class.test.js"
-1. index.js found in the src folder is the bundling entry and exports the library api using the export function
+There are three states we are styling for
 
-## Standard features included
+1. Default - no mouse interactions
+1. Hover - mouse is over the div
+1. Mouse down (active) - mouse button is down
 
-1. Jest tests configured for ES6
-1. Rollup bundling with minification using Tensor
-1. Build publish folder
- 
-## Scripts
+On each state it looks a bit different so the project details will explain what is required for each state.
 
-The package.json file has two scripts defined for common use.
+## Project details
 
-1. Test
-1. Bundle
-1. Publish
+1. Declare a css variable called size that you will use for the width and height.
+1. All values changes should take 0.5 seconds and use the ease function. See `transition` for details.
 
-## Tests
+### Default state
 
-Jest is set up to allow es6 using Babel.  
-It also includes code completion.
+1. background: cornflowerblue
+1. color: white
+1. width and height is equal to size variable
+1. border radius: 10px;
+1. font size: 2rem
+1. cursor: pointer
+1. display text in the center of the div
+1. center the div in a fixed position on the screen. Keep the size in mind so that you can calculate position using calc.
+1. disable user text selection ability on the div so that you can't select text in the div as per normal (user-select).
 
-## Publish
+### Hover
 
-Use the publish node script to bundle your files and copy them to the publish folder.  
-The following files will automatically be copied to the publish folder:
+1. background: #e91e63
+1. make the div from a round rect into a circle using border-radius 
 
-1. All your files located in the dist folder
-1. package.json file with the version number updated
-1. readme.md
+### Active
 
-If you want other files to be included, update "distribute" function in the /build/publish.js file.
-
+1. set the font size to 1.5rem
+1. background: green
+1. set the box shadow to be inside using 10px blur and 5px speed and color rgba(1, 1, 1, 0.61)
